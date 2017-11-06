@@ -11,7 +11,7 @@ channels (example 3).
 
 Getting Started
 
-The source code can be downloaded from the github page (to be updated when in place).
+The source code can be downloaded from the github page https://github.com/bende937/pychan3d.
 
 
 Requirements and installing
