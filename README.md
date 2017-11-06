@@ -61,6 +61,6 @@ solute transport simulation
 
 The examples can be run by opening a terminal and calling:
 
-python path_to_pychan3d/examples/exampleX.py
+python path_to_pychan3d/examples/exampleX/exampleX.py
 
 which will execute the script and generate the output files in your current working directory.
