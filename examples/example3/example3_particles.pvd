@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<VTKFile type="Collection" version="0.1"
+         byte_order="LittleEndian"
+         compressor="vtkZLibDataCompressor">
+  <Collection>
+  <DataSet timestep="1000.000000" group="" part="0" file="example3_particles_0000000000.vtp"/>
+<DataSet timestep="1438.449888" group="" part="0" file="example3_particles_0000000001.vtp"/>
+<DataSet timestep="2069.138081" group="" part="0" file="example3_particles_0000000002.vtp"/>
+<DataSet timestep="2976.351442" group="" part="0" file="example3_particles_0000000003.vtp"/>
+<DataSet timestep="4281.332399" group="" part="0" file="example3_particles_0000000004.vtp"/>
+<DataSet timestep="6158.482111" group="" part="0" file="example3_particles_0000000005.vtp"/>
+<DataSet timestep="8858.667904" group="" part="0" file="example3_particles_0000000006.vtp"/>
+<DataSet timestep="12742.749857" group="" part="0" file="example3_particles_0000000007.vtp"/>
+<DataSet timestep="18329.807108" group="" part="0" file="example3_particles_0000000008.vtp"/>
+<DataSet timestep="26366.508987" group="" part="0" file="example3_particles_0000000009.vtp"/>
+<DataSet timestep="37926.901907" group="" part="0" file="example3_particles_0000000010.vtp"/>
+<DataSet timestep="54555.947812" group="" part="0" file="example3_particles_0000000011.vtp"/>
+<DataSet timestep="78475.997035" group="" part="0" file="example3_particles_0000000012.vtp"/>
+<DataSet timestep="112883.789168" group="" part="0" file="example3_particles_0000000013.vtp"/>
+<DataSet timestep="162377.673919" group="" part="0" file="example3_particles_0000000014.vtp"/>
+<DataSet timestep="233572.146909" group="" part="0" file="example3_particles_0000000015.vtp"/>
+<DataSet timestep="335981.828628" group="" part="0" file="example3_particles_0000000016.vtp"/>
+<DataSet timestep="483293.023857" group="" part="0" file="example3_particles_0000000017.vtp"/>
+<DataSet timestep="695192.796178" group="" part="0" file="example3_particles_0000000018.vtp"/>
+<DataSet timestep="1000000.000000" group="" part="0" file="example3_particles_0000000019.vtp"/>
+</Collection>
+</VTKFile>
