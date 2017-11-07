@@ -46,7 +46,7 @@ Other packages can be useful but require more installation efforts:
 - PETSc 3.6.4 (for high performance serial and parallel linear solvers and preconditioners, required some MPI
 implementation to be installed in order to run in parallel)
 - mpi4py 1.3.1 (MPI wrapper needed by petsc4py)
-- petsc4y 3.7.0 (Python wrapper for PETSc)
+- petsc4py 3.7.0 (Python wrapper for PETSc)
 - METIS 5
 - PyMetis 2016.2
 
