@@ -20,7 +20,7 @@ class CustomTimeInjection(rv_continuous):
         the default some update will be required to ensure an exact normalization of the curve in self.set_interpolator
         and in self._cdf
         """
-        super(rv_continuous, self).__init__()
+        super(CustomTimeInjection, self).__init__()
         if len(set(t)) != len(list(t)):  # test that there is no duplicate in t
             logging.error('Error! There are duplicates in the time array.')
             raise ValueError
@@ -47,6 +47,34 @@ class CustomTimeInjection(rv_continuous):
         n = np.sum(x > self.t)  # fetching the index of the current value in the time array, to sum up to it.
         newt, newc = np.hstack([self.t[:n], x]), np.hstack([self.c[:n] / self.norm, self.interpolator(x)])
         return 0.5 * np.sum((newc[:-1] + newc[1:]) * (newt[1:] - newt[:-1]))
+
+    #def _parse_args_rvs(self,*args, **kwds):
+    #    return args, 0, 1, 1
+
+class ArrivalTimeDistribution(rv_continuous):
+    """This class provides a continuous random variable to describe the injection time of a particle given an injection
+    following a custom (interpolated) concentration profile, i.e obtained by field measurements."""
+    def __init__(self, t, kind='linear'):
+        """
+        :param t: a list or array of times corresponding to the concentrations in param "c" (no duplicates are allowed
+        in param t or the call will fail).
+        :param kind: the kind of interpolation between given points (default is 'linear'). !Warning! if you over-ride
+        the default some update will be required to ensure an exact normalization of the curve in self.set_interpolator
+        and in self._cdf
+        """
+        super(ArrivalTimeDistribution, self).__init__()
+        if len(set(t)) != len(list(t)):  # test that there is no duplicate in t
+            logging.error('Error! There are duplicates in the time array.')
+            raise ValueError
+        self.t = np.sort(np.array(t))
+        self.cumul = (np.arange(self.t.shape[0])) / float(self.t.shape[0] - 1)
+        self.interpolator = interp1d(self.t, self.cumul, fill_value=0., bounds_error=False, kind=kind)
+
+    def _cdf(self, x):
+        """Fast custom definition of cdf (not using self._pdf repeatedly but assuming linear interpolation).
+        :param x: time
+        :return: accumulated probability"""
+        return self.interpolator(x)
 
 
 class TransportSimulation(Network):
@@ -129,6 +157,12 @@ class TransportSimulation(Network):
                 self.particles.append(Particle(self, p, self.particle_injection_times[n]))
         else:
             logging.error('You have to call set_particle_number and injection_times() before you start the particle tracking.')
+
+    def compute_time_distribution(self):
+        # sort particles by outlet node
+        tracked_times = [p.times[-1] for p in self.particles if p.nodes[-1] in self.sampling_nodes]
+        recovery = float(len(tracked_times)) / len(self.particles)
+        return ArrivalTimeDistribution(tracked_times), recovery
 
     def export_particles2vtk(self, filename, times, particles='all'):
         """
