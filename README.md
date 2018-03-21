@@ -60,8 +60,14 @@ different solvers
 - example 3: manually defining an arbitrary network of channels, solving steady-state flow, defining and running a
 solute transport simulation
 
-The examples can be run by opening a terminal and calling:
+pychan3d can be installed from a terminal by moving to the pychan3d folder (containing the file setup.py) and issuing the command:
+python setup.py install
 
+The examples can be run by opening a terminal and calling:
 python path_to_pychan3d/examples/exampleX/exampleX.py
 
 which will execute the script and generate the output files in your current working directory.
+
+
+If you use pychan3d for your own work please cite:
+Dessirier, Benoît, Chin-Fu Tsang, and Auli Niemi. "A new scripting library for modeling flow and transport in fractured rock with channel networks." Computers & Geosciences 111 (2018): 181-189.
