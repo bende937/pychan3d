@@ -14,7 +14,7 @@ Getting Started
 The source code can be downloaded from the github page https://github.com/bende937/pychan3d.
 
 
-Requirements and installing
+Requirements and installation (see also the installation page of the online wiki section)
 
 To use the pychan3d routines you will need to have previously installed:
 - Python 3.5.x
@@ -50,6 +50,9 @@ implementation to be installed in order to run in parallel)
 - PyMetis 2016.2
 
 
+pychan3d can be installed from a terminal by moving to the pychan3d folder (containing the file setup.py) and issuing the command:
+python setup.py install
+
 Examples
 
 Three examples are provided to illustrate some pychan3d workflows:
@@ -58,9 +61,6 @@ different solvers
 - example 2: customizing the domain shape on the outer boundaries and including cavities, solving steady-state flow
 - example 3: manually defining an arbitrary network of channels, solving steady-state flow, defining and running a
 solute transport simulation
-
-pychan3d can be installed from a terminal by moving to the pychan3d folder (containing the file setup.py) and issuing the command:
-python setup.py install
 
 The examples can be run by opening a terminal and calling:
 python path_to_pychan3d/examples/exampleX/exampleX.py
