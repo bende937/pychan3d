@@ -29,7 +29,6 @@ Some other dependencies are highly recommended for full functionality:
 Other useful packages to use in combination with pychan3d:
 
 - matplotlib 1.5.3 (for 2d and simple 3d visualization)
-- mpmath 1.0.0 (for numerical inversion of Laplace Transform)
 
 All the previously mentioned packages are available within the Anaconda distribution, which is the recommended way
 to install all packages. Once all these packages are installed, downloading, unzipping the pychan3d archive and adding
